@@ -7,6 +7,10 @@
 			"ref": null,
 			"url": "https://github.com/th2l-devs/hxcpp"
 		},
+                {
+			"name": "hscript-iris",
+			"type": "haxelib",
+			"version": null
 		{
 			"name": "lime",
 			"type": "haxelib",
