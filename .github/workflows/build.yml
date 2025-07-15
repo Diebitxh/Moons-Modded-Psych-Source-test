@@ -54,7 +54,7 @@ jobs:
           haxelib install lime --quiet
           haxelib install grig.audio --quiet
           haxelib install flixel 5.6.1 --quiet
-          haxelib install flixel-addons --quiet
+          haxelib install flixel-addons 3.2.2 --quiet
           haxelib git funkin.vis https://github.com/FunkinCrew/funkVis
       
       - name: Configure Android
