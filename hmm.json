@@ -15,10 +15,12 @@
 			"url": "https://github.com/th2l-devs/lime"
 		},
 		{
-			"name": "openfl",
-			"type": "haxelib",
-			"version": "9.3.4"
-		},
+                        "name": "openfl",
+			"type": "git",
+			"dir": null,
+			"ref": null,
+			"url": "https://github.com/th2l-devs/openfl"
+                },
 		{
 			"name": "flixel",
 			"type": "haxelib",
