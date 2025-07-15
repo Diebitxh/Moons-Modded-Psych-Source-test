@@ -53,6 +53,7 @@ jobs:
         run: |
           haxelib install lime --quiet
           haxelib install grig.audio --quiet
+          haxelib install funkin.vis --quiet
       
       - name: Configure Android
         if: inputs.name == 'Android'
