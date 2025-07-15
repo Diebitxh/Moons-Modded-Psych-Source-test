@@ -1,75 +1,68 @@
-name: Build
+name: Release
+on: workflow_dispatch
 
-workflow_dispatch:
-
-on:
-  workflow_call:
-    inputs:
-      name:
-        required: true
-        type: string
-      os:
-        required: true
-        type: string
-      buildArgs:
-        required: true
-        type: string
-      artifactName:
-        required: true
-        type: string
-      artifactPath:
-        required: true
-        type: string
+permissions:
+  contents: write
+  discussions: write
 
 env:
-  HAXE_VERSION: 4.3.7
-  PROJECT_NAME: PsychMoon
+  PROJECT_NAME: PsychOnline
 
 jobs:
   build:
-    name: Build
-    runs-on: ${{ inputs.os }}
+    name: ${{ matrix.name }}
+    strategy:
+      matrix:
+        include:
+          - name: Android
+            os: macos-15
+            buildArgs: "android -final -D officialBuild"
+            artifactName: androidBuild
+            artifactPath: "export/release/android/bin/app/build/outputs/apk/release/*.apk"
+          - name: iOS
+            os: macos-15
+            buildArgs: "ios -final -nosign -D officialBuild"
+            artifactName: iOSBuild
+            artifactPath: "export/release/ios/build/Release-iphoneos/*.ipa"
+    uses: ./.github/workflows/build.yml
+    with:
+        name: ${{ matrix.name }}
+        os: ${{ matrix.os }}
+        buildArgs: ${{ matrix.buildArgs }}
+        artifactName: ${{ matrix.artifactName }}
+        artifactPath: ${{ matrix.artifactPath }}
+
+  Releaser:
+    needs: [build]
+    runs-on: ubuntu-latest
+    permissions: write-all
     steps:
-      - name: Checkout
-        uses: actions/checkout@main
-
-      - name: Setup Haxe
-        if: inputs.name != 'Linux ARM64'
-        uses: krdlab/setup-haxe@master
+      - name: Download Android Build
+        uses: actions/download-artifact@main
         with:
-          haxe-version: ${{ env.HAXE_VERSION }}
+          name: androidBuild
+          path: /home/runner
 
-      - name: Setup Haxe (Linux ARM)
-        if: inputs.name == 'Linux ARM64'
-        run: |
-          sudo add-apt-repository ppa:haxe/releases -y
-          sudo apt update
-          sudo apt-get install -y haxe neko
-          haxelib setup ~/haxelib
+      - name: Move Android File
+        run: mv /home/runner/${{ env.PROJECT_NAME }}-release.apk /home/runner/${{ env.PROJECT_NAME }}-ASTC-Android.apk
 
-      - name: Install libVLC
-        if: contains(inputs.name, 'Linux')
-        run: sudo apt install libvlc-dev libvlccore-dev
-
-      - name: Install Libraries
-        run: |
-          haxelib install hmm --quiet
-          haxelib run hmm install --quiet
-
-      - name: Configure Android
-        if: inputs.name == 'Android'
-        run: |
-          haxelib run lime config ANDROID_SDK $ANDROID_HOME
-          haxelib run lime config ANDROID_NDK_ROOT $ANDROID_NDK_LATEST_HOME
-          haxelib run lime config JAVA_HOME $JAVA_HOME_21_arm64
-          haxelib run lime config ANDROID_SETUP true
-
-      - name: Compile
-        run: haxelib run lime build android
-
-      - name: Upload Artifact
-        uses: actions/upload-artifact@main
+      - name: Download iOS Build
+        uses: actions/download-artifact@main
         with:
-          name: ${{ inputs.artifactName }}
-          path: ${{ inputs.artifactPath }}
-          if-no-files-found: error
+          name: iOSBuild
+          path: ${{ github.workspace }}
+
+      - name: Move iOS File
+        run: mv ${{ github.workspace }}/${{ env.PROJECT_NAME }}.ipa /home/runner/${{ env.PROJECT_NAME }}-ASTC-iOS.ipa
+
+      - name: Publish The Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "Release"
+          tag_name: "release"
+          prerelease: false
+          files: |
+            /home/runner/*.apk
+            /home/runner/*.ipa
+
+//i will discard ios later
