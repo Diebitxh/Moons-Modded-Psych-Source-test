@@ -53,7 +53,8 @@ jobs:
         run: |
           haxelib install lime --quiet
           haxelib install grig.audio --quiet
-          haxelib install funkin.vis --quiet
+          haxelib install flixel 5.6.1 --quiet
+          haxelib install flixel-addons --quiet
       
       - name: Configure Android
         if: inputs.name == 'Android'
