@@ -103,10 +103,11 @@ class Main extends Sprite
 
 		// Credits to MAJigsaw77 (he's the og author for this code)
 		#if android
-		Sys.setCwd(Path.addTrailingSlash(Context.getExternalFilesDir()));
-		#elseif ios
-		Sys.setCwd(lime.system.System.applicationStorageDirectory);
+		SUtil.doPermissionsShit();
+		
+		Sys.setCwd(SUtil.getStorageDirectory());
 		#end
+		mobile.backend.CrashHandler.init();
 
 		#if VIDEOS_ALLOWED
 		hxvlc.util.Handle.init(#if (hxvlc >= "1.8.0")  ['--no-lua'] #end);
