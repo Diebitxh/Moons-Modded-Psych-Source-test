@@ -12,7 +12,7 @@
 			"type": "git",
 			"dir": null,
 			"ref": "develop",
-			"url": "https://github.com/mcagabe19-stuff/lime"
+			"url": "https://github.com/th2l-devs/lime"
 		},
 		{
 			"name": "openfl",
@@ -59,7 +59,7 @@
                         "type": "git",
                         "dir": null,
                         "ref": "main",
-                        "url": "https://github.com/mcagabe19-stuff/SScript-7.7.0.git"
+                        "url": "https://github.com/th2l-devs/SScript-7.7.0.git"
                 },
 		{
 			"name": "flxanimate",
@@ -73,7 +73,7 @@
                         "type": "git",
                         "dir": null,
                         "ref": "main",
-                        "url": "https://github.com/mcagabe19-stuff/linc_luajit-rewriten.git"
+                        "url": "https://github.com/th2l-devs/linc_luajit-rewriten.git"
 		},
 		{
 			"name": "hxdiscord_rpc",
