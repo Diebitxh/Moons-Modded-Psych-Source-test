@@ -27,6 +27,7 @@ jobs:
         run: |
           haxelib install hmm --quiet
           haxelib run hmm install --quiet
+          haxelib install openfl 9.3.3
 
       - name: Configure Android
         run: |
