@@ -64,5 +64,3 @@ jobs:
           files: |
             /home/runner/*.apk
             /home/runner/*.ipa
-
-//i will discard ios later
