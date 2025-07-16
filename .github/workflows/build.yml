@@ -21,13 +21,13 @@ jobs:
       - name: Setup Haxe
         uses: krdlab/setup-haxe@master
         with:
-          haxe-version: 4.3.4
+          haxe-version: 4.3.6
 
       - name: Install Libraries
         run: |
           haxelib install hmm --quiet
           haxelib run hmm install --quiet
-          haxelib git openfl https://github.com/openfl/openfl 2374bfc71849944256a0f456ba9797046bda72f6
+          haxelib install openfl 9.3.2
 
       - name: Configure Android
         run: |
@@ -35,6 +35,11 @@ jobs:
           haxelib run lime config ANDROID_NDK_ROOT $ANDROID_NDK_LATEST_HOME
           haxelib run lime config JAVA_HOME $JAVA_HOME
           haxelib run lime config ANDROID_SETUP true 
+          
+      - name: Something
+        run: |
+          mkdir -p ~/.gradle
+          echo "org.gradle.jvmargs=-Xmx4g" >> ~/.gradle/gradle.properties
 
       - name: Compile
         run: haxelib run lime build android
