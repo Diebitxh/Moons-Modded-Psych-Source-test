@@ -1,31 +1,33 @@
 {
-	"dependencies": [
+	"dependencies":
+	[
 		{
-			"name": "hxcpp",
-			"type": "git",
-			"dir": null,
-			"ref": null,
-			"url": "https://github.com/th2l-devs/hxcpp"
-		},
-                {
-			"name": "hscript-iris",
-			"type": "haxelib",
-			"version": null
+			"name": "hmm",
+			"type": "haxelib"
 		},
 		{
 			"name": "lime",
-			"type": "haxelib",
-			"version": "8.1.2"
+			"type": "git",
+            		"dir": null,   
+            		"ref": "main",
+            		"url": "https://github.com/kittycathy233/lime"
 		},
 		{
-			"name": "flixel",
+			"name": "openfl",
 			"type": "haxelib",
-			"version": "5.6.1"
+			"version": "9.3.2"
+		},
+		{
+		      "name": "flixel",
+		      "type": "git",
+		      "dir": null,
+		      "ref": "main",
+		      "url": "https://github.com/kittycathy233/flixel"
 		},
 		{
 			"name": "flixel-addons",
 			"type": "haxelib",
-			"version": "3.2.2"
+			"version": "3.2.1"
 		},
 		{
 			"name": "flixel-tools",
@@ -35,30 +37,8 @@
 		{
 			"name": "flixel-ui",
 			"type": "haxelib",
-			"version": "2.6.1"
+			"version": "2.5.0"
 		},
-		{
-			"name": "json2object",
-			"type": "haxelib",
-			"version": null
-		},
-		{
-			"name": "hxCodec",
-			"type": "haxelib",
-			"version": null
-		},
-		{
-			"name": "tjson",
-			"type": "haxelib",
-			"version": "1.4.0"
-		},
-		{
-                        "name": "SScript",
-                        "type": "git",
-                        "dir": null,
-                        "ref": null,
-                        "url": "https://github.com/th2l-devs/SScript"
-                },
 		{
 			"name": "flxanimate",
 			"type": "git",
@@ -67,46 +47,72 @@
 			"url": "https://github.com/Dot-Stuff/flxanimate"
 		},
 		{
-			"name": "linc_luajit",
-                        "type": "git",
-                        "dir": null,
-                        "ref": null,
-                        "url": "https://github.com/th2l-devs/linc_luajit"
+			"name": "hxcpp",
+			"type": "git",
+            		"dir": null,
+            		"ref": "main",
+            		"url": "https://github.com/kittycathy233/hxcpp"
 		},
 		{
-			"name": "hxdiscord_rpc",
-			"type": "git",
-			"dir": null,
-			"ref": "3538a1c2bb07b04208cd014220207f8173acdb21",
-			"url": "https://github.com/MAJigsaw77/hxdiscord_rpc"
+			"name": "tjson",
+			"type": "haxelib",
+			"version": "1.4.0"
+		},
+		{
+			"name": "hxjsonast",
+			"type": "haxelib"
+		},
+		{
+			"name": "hscript",
+			"type": "haxelib",
+			"version": "2.5.0"
 		},
 		{
 			"name": "hxvlc",
-			"type": "git",
-			"dir": null,
-			"ref": "70e7f5f3e76d526ac6fb8f0e6665efe7dfda589d",
-			"url": "https://github.com/MAJigsaw77/hxvlc"
+			"type": "haxelib",
+			"version": "1.2.0"
 		},
 		{
-			"name": "funkin.vis",
-			"type": "git",
-			"dir": null,
-			"ref": "d5361037efa3a02c4ab20b5bd14ca11e7d00f519",
-			"url": "https://github.com/FunkinCrew/funkVis"
+			"name": "hxcpp-debug-server",
+			"type": "haxelib",
+			"version": "1.2.4"
 		},
 		{
-			"name": "grig.audio",
-			"type": "git",
-			"dir": null,
-			"ref": "cbf91e2180fd2e374924fe74844086aab7891666",
-			"url": "https://gitlab.com/haxe-grig/grig.audio.git"
+			"name": "formatter",
+			"type": "haxelib",
+			"version": "1.16.0"
 		},
 		{
-			"name": "extension-androidtools",
+			"name": "discord_rpc",
 			"type": "git",
-			"dir": null,
-			"ref": "df9dfd0cda74e5460ae3afcfff1081c50959ed4a",
-			"url": "https://github.com/MAJigsaw77/extension-androidtools"
-		}
+			"ref": "2d83fa863ef0c1eace5f1cf67c3ac315d1a3a8a5",
+			"url": "https://github.com/Aidan63/linc_discord-rpc.git"
+		},
+		{
+			"name": "hscript-ex",
+			"type": "git",
+			"ref": "6d5e4fad452ed43d62b2112b2d7455ef207068b4",
+			"url": "https://github.com/ianharrigan/hscript-ex.git"
+		},
+		{
+            "name": "linc_luajit",
+            "type": "git",
+            "dir": null,
+            "url": "https://github.com/kittycathy233/linc_luajit.git"
+        },
+		{
+    		"name": "funkin.vis",
+    		"type": "git",
+    		"dir": null,
+    		"ref": "1966f8fbbbc509ed90d4b520f3c49c084fc92fd6",
+    		"url": "https://github.com/FunkinCrew/funkVis"
+   		},
+   		{
+		      "name": "grig.audio",
+		      "type": "git",
+		      "dir": "src",
+		      "ref": "cbf91e2180fd2e374924fe74844086aab7891666",
+		      "url": "https://gitlab.com/haxe-grig/grig.audio.git"
+	    }
 	]
 }
