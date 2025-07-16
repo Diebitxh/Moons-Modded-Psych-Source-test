@@ -18,6 +18,11 @@
 			"version": "9.3.2"
 		},
 		{
+			"name": "hscript-iris",
+			"type": "haxelib",
+			"version": null,
+		},
+		{
 		      "name": "flixel",
 		      "type": "git",
 		      "dir": null,
