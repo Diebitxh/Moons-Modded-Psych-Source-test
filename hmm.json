@@ -23,6 +23,20 @@
 			"version": null
 		},
 		{
+			"name": "hxdiscord_rpc",
+			"type": "git",
+			"dir": null,
+			"ref": "3538a1c2bb07b04208cd014220207f8173acdb21",
+			"url": "https://github.com/MAJigsaw77/hxdiscord_rpc"
+		},
+		{
+			"name": "linc_luajit",
+                        "type": "git",
+                        "dir": null,
+                        "ref": null,
+                        "url": "https://github.com/th2l-devs/linc_luajit"
+		},
+		{
 			"name": "extension-androidtools",
 			"type": "git",
 			"dir": null,
@@ -93,12 +107,6 @@
 			"name": "formatter",
 			"type": "haxelib",
 			"version": "1.16.0"
-		},
-		{
-			"name": "discord_rpc",
-			"type": "git",
-			"ref": "2d83fa863ef0c1eace5f1cf67c3ac315d1a3a8a5",
-			"url": "https://github.com/Aidan63/linc_discord-rpc.git"
 		},
 		{
 			"name": "hscript-ex",
