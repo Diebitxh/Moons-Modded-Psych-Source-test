@@ -30,13 +30,6 @@
 			"url": "https://github.com/MAJigsaw77/hxdiscord_rpc"
 		},
 		{
-			"name": "linc_luajit",
-                        "type": "git",
-                        "dir": null,
-                        "ref": null,
-                        "url": "https://github.com/th2l-devs/linc_luajit"
-		},
-		{
 			"name": "extension-androidtools",
 			"type": "git",
 			"dir": null,
